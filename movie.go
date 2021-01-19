@@ -33,6 +33,8 @@ func (this *Movie) Initialize(path *string) error {
 				videoStreams = append(videoStreams, stream)
 			} else if stream.Codec_Type == "audio" {
 				audioStreams = append(audioStreams, stream)
+			}  else if stream.Codec_Type == "subtitle" {
+				this.HasSubtitle = true
 			}
 		}
 	}
