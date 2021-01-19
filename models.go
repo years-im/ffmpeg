@@ -13,6 +13,7 @@ type Movie struct {
 	CreationTime time.Time
 	Container    string
 	Invalid      bool
+	HasSubtitle  bool
 
 	VideoStream  string
 	VideoCodec   string
