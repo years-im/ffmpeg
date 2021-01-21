@@ -19,7 +19,7 @@ func (this *Movie) Initialize(path *string) error {
 	suffix := regexp.MustCompile("[avi|mp4|flv|mkv|mov]+$")
 	this.TsPath = suffix.ReplaceAllString(*path, "ts")
 	ffprobe_binary := FfprobeBinary()
-	command := fmt.Sprintf("%s -i %s -print_format json -show_format -show_streams -show_error", ffprobe_binary, *path)
+	command := fmt.Sprintf("%s -i \"%s\" -print_format json -show_format -show_streams -show_error", ffprobe_binary, *path)
 	std_output := system(command)
 	var metadata Result
 	err = json.Unmarshal([]byte(std_output), &metadata)
