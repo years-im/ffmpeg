@@ -32,6 +32,8 @@ type Movie struct {
 	AudioSampleRate    string
 	AudioChannels      int
 	AudioChannelLayout string
+	
+	Streams []Stream
 }
 
 type Result struct {
