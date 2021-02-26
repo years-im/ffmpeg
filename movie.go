@@ -28,6 +28,7 @@ func (this *Movie) Initialize(path *string) error {
 	if err != nil {
 		this.Duration = 0
 	} else {
+		this.Streams = metadata.Streams
 		for _, stream := range metadata.Streams {
 			if stream.Codec_Type == "video" {
 				videoStreams = append(videoStreams, stream)
